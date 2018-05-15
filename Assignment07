@@ -1,0 +1,24 @@
+#This function evaluates if the argument is between 1 and 5
+def menuChoice(choice):
+    if (choice <= 0 or choice >5):
+        raise ValueError #If the choice is not between 1-5, then the ValueError is passed.
+
+print("This is a simple demonstration of Python Error Handling.")
+
+#For the purposes of this simple demonstration, none of the valid inputs does anything spectacular.
+while True:
+    try:
+        print("""
+            Menu of Options
+            1) Show current data
+            2) Add a new item.
+            3) Remove an existing item.
+            4) Save Data to File
+            5) Exit Program
+            """)
+        num = int(input("Enter your choice: ")) #request an integer as input
+        menuChoice(num)
+        break #this break function is executed if the number if acceptable
+    except ValueError: #is executed if input is not a valid.
+        print("That is not a valid choice")
+print ("That is a valid choice.") #this will print once the loop is broken.
